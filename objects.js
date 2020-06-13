@@ -84,8 +84,7 @@ const validationRules = {
       options: state => {
         validity = states.hasOwnProperty(state.toUpperCase()) || Object.values(states).filter((item) => {
           return (item.toUpperCase() === state.toUpperCase());
-        });
-
+        }).length;
         if (!validity)
           throw Error("Invalid state value");
 

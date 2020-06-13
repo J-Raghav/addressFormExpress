@@ -9,8 +9,21 @@
     <title>Fill address details</title>
   </head>
   <body>
+    <div class="mb-5 p-3">
+      <a href="/" > ~ Goto home page</a>
+    </div>
+
     <div id="form-container" class="container mt-4 p-3">
       <h1 class='text-center display-4'>Address</h1>
+
+      <% if(errors.length){ %>
+        <div class="alert alert-danger">
+          <% for(let error of errors ){ %>
+            <span> <%= `"Invalid ${error.param}: ${error.value}"  ${error.msg}` %> </span><br>
+          <% } %>
+        </div>
+      <% } %>
+
       <form action='/<%= userId %>/addresses' method='POST' class='my-4' name='address'>
         <div class="form-group"> <!-- Full Name -->
           <label for="fullNameId" class="control-label">Full Name</label>
@@ -48,6 +61,7 @@
         </div>
 
       </form>
+
     </div>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js'></script>
     <script src='/js/form.js'></script>

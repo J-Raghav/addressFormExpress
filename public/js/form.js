@@ -62,13 +62,8 @@ $(function(){
       pinCode :  "Pincode should be of 6 digits",
     },
     submitHandler: function(form) {
-      print(form, $("form[name='address']"))
-      $("form[name='address']").submit(function(e){
-        e.preventDefault();
-
-      });
+        form.submit()
     }
-
   });
   // {
   //         fullName: $('#fullNameId').val(),
@@ -81,20 +76,6 @@ $(function(){
   // $("form[name='address']").submit(function(event) {
   //   // Cancels the form's submit action.
   //   event.preventDefault();
-  //   let url = $(this).attr('action');
-  //
-  //   $.ajax({
-  //     url: url,
-  //     dataType: 'json',
-  //     type: 'post',
-  //     contentType: 'application/x-www-form-urlencoded',
-  //     data: $(this).serialize(),
-  //     success: function( data, textStatus ){
-  //         console.log( data )
-  //     },
-  //     error: function( jqXhr, textStatus, errorThrown ){
-  //         console.log( errorThrown );
-  //     }
-  //   });
+
   // });
 });
