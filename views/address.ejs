@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/master.css">
+    <title>Addresses - User</title>
+  </head>
+  <body>
+    <div class="container mt-4">
+      <h1 class='text-center dispaly-4'> Your Address </h1>
+      <div class="address-cont row my-4">
+        <% for(let address of addresses ){%>
+          <div class="col-md-6 col-lg-4">
+            <div class="card">
+              <div class="card-body">
+                <p class='card-title'><strong> <%= address.fullName %> </strong></p>
+                <p class='card-text'> <%= address.streetAddress %></p>
+                <p class='card-text'>
+                  <span id='city'> <%= address.city %> </span>,
+                  <span id='state'> <%= address.state %> </span>
+                  <span id='pin'> <%= address.pinCode %></span>
+                </p>
+                <p>India</p>
+                <br>
+                <p class='card-subtitle'><strong>Contact:-</strong></p>
+                <p id='mobile_no' class="card-text">Phone No. : <%= address.mobileNumber %></p>
+              </div>
+            </div>
+          </div>
+        <% } %>
+      </div>
+      <a href="/<%= userId %>/addresses/form" class="btn btn-primary btn-block w-75 m-auto">Add Address</a>
+    </div>
+  </body>
+</html>

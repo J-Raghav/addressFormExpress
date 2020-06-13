@@ -1,0 +1,12 @@
+p{
+  margin-bottom: 0;
+}
+label[id$='-error']{
+  color:red;
+  font-size: .7rem;
+}
+
+@media only screen and (min-width: 567px) {
+  #form-container{
+    width:50%;
+}

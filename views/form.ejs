@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/master.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Fill address details</title>
+  </head>
+  <body>
+    <div id="form-container" class="container mt-4 p-3">
+      <h1 class='text-center display-4'>Address</h1>
+      <form action='/<%= userId %>/addresses' method='POST' class='my-4' name='address'>
+        <div class="form-group"> <!-- Full Name -->
+          <label for="fullNameId" class="control-label">Full Name</label>
+          <input type="text" class="form-control" id="fullNameId" name="fullName" placeholder="John Deer">
+        </div>
+
+        <div class="form-group"> <!-- Mobile Number -->
+          <label for="mobileId" class="control-label">Mobile Number</label>
+          <input type="text" class="form-control" id="mobileId" name="mobileNumber" placeholder="###-###-####">
+        </div>
+
+        <div class="form-group"> <!-- Street -->
+          <label for="streetId" class="control-label">Street Address</label>
+          <input type="text" class="form-control" id="streetId" name="streetAddress" placeholder="Street address, P.O. box, company name, c/o">
+        </div>
+
+
+        <div class="form-group"> <!-- City-->
+          <label for="cityId" class="control-label">City</label>
+          <input type="text" class="form-control" id="cityId" name="city" placeholder="Cityname">
+        </div>
+
+        <div class="form-group"> <!-- State Button -->
+          <label for="stateId" class="control-label">State</label>
+          <input class="form-control" id="stateId" name='state' placeholder='Statename'>
+        </div>
+
+        <div class="form-group"> <!-- Pin Code-->
+          <label for="pinId" class="control-label">Pin Code</label>
+          <input type="text" class="form-control" id="pinId" name="pinCode" placeholder="######">
+        </div>
+
+        <div id="submitAddress" class="form-group"> <!-- Submit Button -->
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+
+      </form>
+    </div>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js'></script>
+    <script src='/js/form.js'></script>
+  </body>
+</html>
