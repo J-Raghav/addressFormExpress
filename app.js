@@ -13,7 +13,7 @@ app.set('view engine','ejs');
 app.use(express.static('public'));
 app.use(express.urlencoded({extended:true}));
 
-mongoose.connect('mongodb://localhost:27017/dev', { useNewUrlParser: true, useUnifiedTopology: true }, function(error) {
+mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true }, function(error) {
    console.log((error) ? 'Connection failed: Can\'t connect to Database':'Database Connected');
 });
 
